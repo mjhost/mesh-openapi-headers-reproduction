@@ -1,0 +1,8 @@
+sources:
+  - name: sample
+    handler:
+      openapi:
+        source: sample-endpoints.v1.yaml
+        operationHeaders:
+          x-from-variables: "{args.xFromVariable}"
+          x-from-request: "{context.headers[x-from-request]}"

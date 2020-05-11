@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: sample-endpoint
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/thing/{thingId}':
+    parameters:
+      - schema:
+          type: string
+        name: thingId
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OK'
+      operationId: get-thing-thingId
+components:
+  schemas:
+    OK:
+      title: OK
+      type: object
+      properties:
+        result:
+          type: boolean

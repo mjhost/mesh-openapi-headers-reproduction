@@ -1,0 +1,16 @@
+curl 'http://localhost:4000/graphql' \
+  -H 'Connection: keep-alive' \
+  -H 'Pragma: no-cache' \
+  -H 'Cache-Control: no-cache' \
+  -H 'accept: */*' \
+  -H 'x-from-request: from-headers-1' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36' \
+  -H 'content-type: application/json' \
+  -H 'Origin: http://localhost:4000' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:4000/' \
+  -H 'Accept-Language: it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6' \
+  --data-binary $'{"operationName":null,"variables":{"fromVariable":"fromVariable1"},"query":"query ($fromVariable: ID\u0021) {\\n  getThingThingId(thingId: \\"one\\", xFromVariable: $fromVariable) {\\n    result\\n  }\\n}\\n"}' \
+  --compressed
